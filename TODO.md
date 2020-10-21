@@ -38,7 +38,7 @@ Online_Store
 |          __init__.py
 ```
 
-A package consists of a folder with an __init__.py file. Notice that our static folder doesn't have this: that's because Flask doesn't need to recognize this as a package. We'll get into this a bit later.
+A package consists of a folder with an `<__init__.py>` file. Notice that our static folder doesn't have this: that's because Flask doesn't need to recognize this as a package. We'll get into this a bit later.
 
 Using packages, you would leave important files like your .gitignore and your app.py in the project root, as well as your README.md and a few other important files. Within the "big" package folder (in this example, online_store), you would keep your __init__, config, and python module files (sometimes broken into separate folders for clarity), with subfolders for static files like assets and styles, and a subfolder for templates (if you're directly serving HTML).
 
@@ -72,9 +72,9 @@ If you haven't already, check out the resources in the main Varsity repository. 
 
 2. It's good practice to keep app.py (the file that runs your app) in your project's root directory. Obviously, it can work if you move it, but it can cause problems, since Flask looks in the project's root for the app. For now, let's keep it in our project's root.
 
-3. This project is going to stay relatively general, and we'll be creating lots of dummy routes to start. Once you're done, feel free to go refactor a previous project to use blueprints, or add more to this as a stretch challenge. For now, create an __init__.py file in your week_one_blueprints folder. Then, add a config.py file.
+3. This project is going to stay relatively general, and we'll be creating lots of dummy routes to start. Once you're done, feel free to go refactor a previous project to use blueprints, or add more to this as a stretch challenge. For now, create an `<__init__.py>` file in your week_one_blueprints folder. Then, add a config.py file.
 
-4. Initialize your Flask application in __init__.py. Also, make sure you import Blueprint at the top of the file. We'll need that in a minute.
+4. Initialize your Flask application in `<__init__.py>`. Also, make sure you import Blueprint at the top of the file. We'll need that in a minute.
 
 5. In your project's root directory, create a .env file, and add a SECRET_KEY. We don't really need this in this application, but I want you to get practice with the whole setup.
 
@@ -89,11 +89,11 @@ class Config:
 ```
 
 
-7. In __init__.py, create your app. Set app.config.from_object(Config) so that your application can use the environmental variables you just configured. Now, the rest is going to be pretty independent, but this is what we need:
+7. In `<__init__.py>`, create your app. Set app.config.from_object(Config) so that your application can use the environmental variables you just configured. Now, the rest is going to be pretty independent, but this is what we need:
 
-      1. Create a "main" folder. This folder has to have an __init__.py file in it, but it's okay to leave that file empty. This file just tells Flask that we're using packages, and to recognize this folder as a package to look in. Also in this folder, create a routes.py folder. At the top of routes.py, import Blueprint, and initialize your "main" blueprints. Add any three routes serving any basic HTML files in this file.
+      1. Create a "main" folder. This folder has to have an `<__init__.py>` file in it, but it's okay to leave that file empty. This file just tells Flask that we're using packages, and to recognize this folder as a package to look in. Also in this folder, create a routes.py folder. At the top of routes.py, import Blueprint, and initialize your "main" blueprints. Add any three routes serving any basic HTML files in this file.
       2. Create a "party" folder. Follow the above instructions to initialize, and make sure you have at least two routes in this one. Don't forget to create your templates to go along with these!
-      3. In your main __init__.py in your project root, make sure you're registering your blueprints so your app knows what it's looking for. And, don't forget to test!
+      3. In your main `<__init__.py>` in your project root, make sure you're registering your blueprints so your app knows what it's looking for. And, don't forget to test!
 
 8. If you run into problems with things running, check these few things:
 
